@@ -1,8 +1,3 @@
-"Call the vimrc plug file to install all used plugins
- if filereadable(expand("~/.vim/plugins"))
-     source ~/.vim/plugins
- endif
-
 "Set compatibility to ViM (not Vi)
 set nocompatible
 
@@ -14,6 +9,16 @@ syntax on
 
 " So plug-ins load correctly
 filetype plugin indent on
+
+"Call the vimrc plug file to install all used plugins
+ if filereadable(expand("~/.vim/plugins"))
+     source ~/.vim/plugins
+ endif
+
+" COLORSCHEME
+colorscheme gruvbox
+"Set dark mode
+set bg=dark
 
 "Automatically wrap text that extends beyond screen length
 set wrap
@@ -28,6 +33,8 @@ set tabstop=4
 set shiftwidth=4
 "On pressing tab, insert 4 spaces
 set expandtab
+"automatic indenting for any filetype
+set autoindent
 
 "Show status bar
 set laststatus=2
@@ -54,3 +61,13 @@ set incsearch
 set ignorecase
 "Include only uppercase words with uppercase search term
 set smartcase
+"Press enter when in search to remove all highlighting - Note that search is
+"still active
+nnoremap <CR> :nohlsearch<CR><CR>:<backspace>
+
+"FILE FINDING
+"Search down into subfolders. Provides tab-completion for file-related tasks
+"set path+=**
+
+"Display all matching files when tab completing
+set wildmenu
