@@ -11,8 +11,8 @@ syntax on
 filetype plugin indent on
 
 "Call the vimrc plug file to install all used plugins
- if filereadable(expand("~/.vim/plugins"))
-     source ~/.vim/plugins
+ if filereadable(expand("~/.vim/plugins.vim"))
+     source ~/.vim/plugins.vim
  endif
 
 " COLORSCHEME
