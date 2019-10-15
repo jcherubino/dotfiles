@@ -85,47 +85,25 @@ function! GitRepoName()
     return l:name[:-2] 
 endfunction
 
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  "If branch name is not empty then in a git repo
-  if strlen(l:branchname)>0
-      let l:reponame = GitRepoName()
-      return join([l:reponame, l:branchname], ' : ')
-  "Otherwise return an empty string
-  else
-      return ''
-  endif
-endfunction
-
-"STATUS BAR
-"Always display status bar
-set laststatus=2
-
-"Functions for getting git branch and repo name for statusline display
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! GitRepoName()
-    let l:name = system("basename -s .git `git config --get remote.origin.url`")
-    " use indexes to strip ^@ characters from end of repo name
-    return l:name[:-2] 
-endfunction
-
-function! UncommitedChanges()
-   if system("git status --porcelain") == ''''
-       return 0
-   endif
-   return 1
+function! HasUncommitedChanges()
+    let l:status = system("git status --porcelain --untracked-files=no")
+    if len(l:status) > 0
+        return '!'
+    else
+        return ''
+    endif
 endfunction
 
 function! StatuslineGit()
   let l:branchname = GitBranch()
   "If branch name is not empty then in a git repo
   if strlen(l:branchname)>0
-      let l:reponame = GitRepoName()
-      return join([l:reponame, l:branchname], ' : ') . ' '
-  "Otherwise return an empty string
+      let l:status = HasUncommitedChanges()
+      if l:status == '!'
+          return join([l:branchname, l:status], ' : ') . ' '
+      else
+          return l:branchname . ' ' 
+      endif
   else
       return ''
   endif
@@ -133,17 +111,21 @@ endfunction
 
 "Configure status bar display
 set statusline=
+"Blue highlighting style
 set statusline+=%#PmenuSel#
+"Display status line in format reponame : branchname : ! if changes need
+"committing
 set statusline+=%{StatuslineGit()}
+"Show [+] in red text if changes to file have been made
 set statusline+=%#WarningMsg#
 set statusline+=%m
+"Display path to file
 set statusline+=%#Tooltip#
-set statusline+=%{UncommitedChanges()}
-set statusline+=\ %f
+set statusline+=\ %F
+"Right align text
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
 set statusline+=\ %l:%c
 set statusline+=\ 
