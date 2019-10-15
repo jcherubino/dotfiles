@@ -36,8 +36,16 @@ set expandtab
 "automatic indenting for any filetype
 set autoindent
 
-"Show status bar
+"STATUS BAR
+"Always display status bar
 set laststatus=2
+"Configure status bar display
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=\ %F
+set statusline+=%#LineNr#
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 
 " Display options
 set showmode
@@ -46,8 +54,9 @@ set showcmd
 "Highlight matching pairs of brackets
 set matchpairs+=<:>
 
-"show line numbers
+"show line numbers - relative for all lines except current line
 set number
+set relativenumber 
 
 " Encoding
 set encoding=utf-8
