@@ -100,11 +100,12 @@ function! StatuslineGit()
   let l:branchname = GitBranch()
   "If branch name is not empty then in a git repo
   if strlen(l:branchname)>0
+      let l:repo = GitRepoName()
       let l:status = HasUncommitedChanges()
       if l:status == '!'
-          return join([l:branchname, l:status], ' : ') . ' '
+          return join([l:repo, l:branchname, l:status], ' : ') . ' '
       else
-          return l:branchname . ' ' 
+          return join([l:repo, l:branchname], ' : ') . ' '
       endif
   else
       return ''
