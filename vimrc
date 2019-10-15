@@ -112,6 +112,13 @@ function! GitRepoName()
     return l:name[:-2] 
 endfunction
 
+function! UncommitedChanges()
+   if system("git status --porcelain") == ''''
+       return 0
+   endif
+   return 1
+endfunction
+
 function! StatuslineGit()
   let l:branchname = GitBranch()
   "If branch name is not empty then in a git repo
@@ -131,6 +138,7 @@ set statusline+=%{StatuslineGit()}
 set statusline+=%#WarningMsg#
 set statusline+=%m
 set statusline+=%#Tooltip#
+set statusline+=%{UncommitedChanges()}
 set statusline+=\ %f
 set statusline+=%=
 set statusline+=%#CursorColumn#
