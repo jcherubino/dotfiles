@@ -65,7 +65,7 @@ nnoremap <CR> :nohlsearch<CR><CR>:<backspace>
 
 "FILE FINDING
 "Search down into subfolders. Provides tab-completion for file-related tasks
-"set path+=**
+set path+=**
 
 "Display all matching files when tab completing
 set wildmenu
@@ -79,6 +79,8 @@ function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
+"Due to slow performance function is not being used - needs to smartly store
+"name 
 function! GitRepoName()
     let l:name = system("basename -s .git `git config --get remote.origin.url`")
     " use indexes to strip ^@ characters from end of repo name
@@ -125,7 +127,10 @@ set statusline+=\ %F
 "Right align text
 set statusline+=%=
 set statusline+=%#CursorColumn#
+"Display filetype
 set statusline+=\ %y
+"Display file encoding
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"Display line and col numbers
 set statusline+=\ %l:%c
 set statusline+=\ 
