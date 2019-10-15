@@ -36,17 +36,6 @@ set expandtab
 "automatic indenting for any filetype
 set autoindent
 
-"STATUS BAR
-"Always display status bar
-set laststatus=2
-"Configure status bar display
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=\ %F
-set statusline+=%#LineNr#
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-
 " Display options
 set showmode
 set showcmd
@@ -80,3 +69,73 @@ nnoremap <CR> :nohlsearch<CR><CR>:<backspace>
 
 "Display all matching files when tab completing
 set wildmenu
+
+"STATUS BAR
+"Always display status bar
+set laststatus=2
+
+"Functions for getting git branch and repo name for statusline display
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! GitRepoName()
+    let l:name = system("basename -s .git `git config --get remote.origin.url`")
+    " use indexes to strip ^@ characters from end of repo name
+    return l:name[:-2] 
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  "If branch name is not empty then in a git repo
+  if strlen(l:branchname)>0
+      let l:reponame = GitRepoName()
+      return join([l:reponame, l:branchname], ' : ')
+  "Otherwise return an empty string
+  else
+      return ''
+  endif
+endfunction
+
+"STATUS BAR
+"Always display status bar
+set laststatus=2
+
+"Functions for getting git branch and repo name for statusline display
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! GitRepoName()
+    let l:name = system("basename -s .git `git config --get remote.origin.url`")
+    " use indexes to strip ^@ characters from end of repo name
+    return l:name[:-2] 
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  "If branch name is not empty then in a git repo
+  if strlen(l:branchname)>0
+      let l:reponame = GitRepoName()
+      return join([l:reponame, l:branchname], ' : ') . ' '
+  "Otherwise return an empty string
+  else
+      return ''
+  endif
+endfunction
+
+"Configure status bar display
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#WarningMsg#
+set statusline+=%m
+set statusline+=%#Tooltip#
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %l:%c
+set statusline+=\ 
