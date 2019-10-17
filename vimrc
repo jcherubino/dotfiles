@@ -23,6 +23,18 @@ set bg=dark
 "Automatically wrap text that extends beyond screen length
 set wrap
 
+"Splits open at bottom and right 
+set splitbelow 
+set splitright
+
+let mapleader =";"
+
+"shortcut split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 "Set maximum column length to 80 characters
 set textwidth=80
 
@@ -61,7 +73,7 @@ set ignorecase
 set smartcase
 "Press enter when in search to remove all highlighting - Note that search is
 "still active
-nnoremap <CR> :nohlsearch<CR><CR>:<backspace>
+nnoremap <CR> :nohlsearch<CR>:<backspace>
 
 "FILE FINDING
 "Search down into subfolders. Provides tab-completion for file-related tasks
