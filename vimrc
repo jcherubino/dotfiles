@@ -38,6 +38,8 @@ map <C-l> <C-w>l
 "Set maximum column length to 80 characters
 set textwidth=80
 
+"Disable automatic nextline commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "Format tabs correctly
 "show existing tab with 4 spaces width
 set tabstop=4
