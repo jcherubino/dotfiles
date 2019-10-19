@@ -6,7 +6,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+"Colorscheme"
 Plug 'morhetz/gruvbox'
+
+"Javascript and JSX syntax highlighting for react
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
