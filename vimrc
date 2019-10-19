@@ -126,6 +126,16 @@ function! StatuslineGit()
   endif
 endfunction
 
+"If the relative path to the file name exceeds 20 characters, then function will just
+"return a string of the function name for use in the statusline
+function! SetFilePathDisplay()
+    if strlen(expand('%:~')) > 20
+        return expand('%')
+    else
+        return expand('%:~')
+    endif
+endfunction
+
 "Configure status bar display
 set statusline=
 "Blue highlighting style
@@ -138,7 +148,7 @@ set statusline+=%#WarningMsg#
 set statusline+=%m
 "Display path to file
 set statusline+=%#Tooltip#
-set statusline+=\ %F
+set statusline+=\ %{SetFilePathDisplay()}
 "Right align text
 set statusline+=%=
 set statusline+=%#CursorColumn#
