@@ -2,7 +2,7 @@ snippet note "Create a new tex file using template" b
 \documentclass[a4paper,twoside]{article}
 
 \author{Josh Cherubino}
-\title{$1}
+\title{`!p snip.rv = snip.basename`}
 
 %External Packages
 \usepackage[australian]{babel}
@@ -37,6 +37,10 @@ snippet dm "Displaymath" w
 \] $0
 endsnippet
 
+snippet wim "Wrap in inline math" w
+$ ${VISUAL:} $ $0
+endsnippet
+
 snippet // "Fraction" iA
 \\frac{$1}{$2} $0
 endsnippet
@@ -65,6 +69,27 @@ snippet item "Itemise" bA
 \end{itemize}
 endsnippet
 
+snippet tab "Tabular environment" b
+\begin{tabular}{$1}
+	\hline
+	$0
+\end{tabular}
+endsnippet
+
+snippet pmat "Paren matrix" iA
+\begin{pmatrix}
+	$1
+\end{pmatrix}
+$0
+endsnippet
+
+snippet bmat "Brackets matrix" iA
+\begin{bmatrix}
+	$1
+\end{bmatrix}
+$0
+endsnippet
+
 snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}}
 endsnippet
@@ -80,3 +105,21 @@ endsnippet
 snippet ooo "\infty" iA
 \infty
 endsnippet
+
+snippet <= "leq" iA
+\le
+endsnippet
+
+snippet >= "geq" iA
+\ge
+endsnippet
+
+snippet >> ">>" iA
+\gg
+endsnippet
+
+snippet << "<<" iA
+\ll
+endsnippet
+
+
