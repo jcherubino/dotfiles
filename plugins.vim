@@ -13,5 +13,18 @@ Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
+"Ultisnips snippet manager
+Plug 'SirVer/ultisnips'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader>z"
+let g:UltiSnipsJumpBackwardTrigger="<leader>b"
+
+"LaTeX plugins for using vim
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+
 call plug#end()
 

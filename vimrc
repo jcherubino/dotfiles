@@ -10,6 +10,8 @@ syntax on
 " So plug-ins load correctly
 filetype plugin indent on
 
+let mapleader =";"
+
 "Call the vimrc plug file to install all used plugins
  if filereadable(expand("~/.vim/plugins.vim"))
      source ~/.vim/plugins.vim
@@ -20,14 +22,9 @@ colorscheme gruvbox
 "Set dark mode
 set bg=dark
 
-"Automatically wrap text that extends beyond screen length
-set wrap
-
 "Splits open at bottom and right 
 set splitbelow 
 set splitright
-
-let mapleader =";"
 
 "shortcut split navigation
 map <C-h> <C-w>h
