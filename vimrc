@@ -38,6 +38,9 @@ map <C-l> <C-w>l
 "Set maximum column length to 80 characters
 set textwidth=80
 
+"Turn on spell checking
+setlocal spell spelllang=en_au
+
 "Disable automatic nextline commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "Format tabs correctly
