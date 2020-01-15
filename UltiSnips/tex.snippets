@@ -1,19 +1,39 @@
 snippet note "Create a new tex file using template" b
-\documentclass[a4paper,twoside]{article}
-
-\author{Josh Cherubino}
-\title{`!p snip.rv = snip.basename`}
+\documentclass[a4paper]{article}
 
 %External Packages
 \usepackage[australian]{babel}
 \usepackage{amsmath}
+\usepackage{titling} 
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\newcommand{\unitcode}{ENG1060}
+
+%custom title style
+\renewcommand{\maketitle}{
+\begin{flushleft}
+\Large\bfseries\noindent\thetitle \par\rule{345pt}{0.15pt}
+\end{flushleft}
+}
+
+%Custom section styling
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+
+%Set up custom header
+\fancyhf{}
+\rhead{\unitcode\hspace{0.2em} --- \thedate}
+\lhead{\theauthor}
+\pagestyle{fancy}
 
 \begin{document}
+
+\date{\today}
+\title{Lecture 1 -- Laplace Transforms}
+\author{Josh Cherubino}
 \maketitle
-$0
 
 \end{document}
-
 endsnippet
 
 snippet sec "Latex Section" bA
