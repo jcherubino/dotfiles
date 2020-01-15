@@ -1,4 +1,4 @@
-"Set compatibility to ViM (not Vi)
+"Set compatibility to Vim (not VI)
 set nocompatible
 
 "Helps force plug-ins to load correctly when it is turned back on 
@@ -12,7 +12,7 @@ filetype plugin indent on
 
 let mapleader =";"
 
-"Set global os in g:os variable
+"Set global OS in g:os variable
 let g:os = substitute(system('uname'), '\n', '', '')
 
 "Call the vimrc plug file to install all used plugins
@@ -43,6 +43,8 @@ set textwidth=80
 
 "Turn on spell checking
 setlocal spell spelllang=en_au
+"Customise incorrect spelling appearance
+hi SpellBad ctermfg=001 cterm=bold,underline
 
 "Disable automatic nextline commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -162,6 +164,6 @@ set statusline+=%#CursorColumn#
 set statusline+=\ %y
 "Display file encoding
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"Display line and col numbers
+"Display line and column numbers
 set statusline+=\ %l:%c
 set statusline+=\ 
