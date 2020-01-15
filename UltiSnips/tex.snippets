@@ -1,3 +1,12 @@
+global !p
+def map_basename_to_title(basename):
+	'''Function to convert base file names in the form lecture-x-concept to
+	titles of the form Lecture X: Concept'''
+	res = basename.replace('-', ' ', 1).replace('-',': ', 1).replace('-',' ')
+	res = res.title()
+	return res
+endglobal
+
 snippet note "Create a new tex file using template" b
 \documentclass[a4paper]{article}
 
@@ -8,7 +17,7 @@ snippet note "Create a new tex file using template" b
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 
-\newcommand{\unitcode}{ENG1060}
+\newcommand{\unitcode}{$1}
 
 %custom title style
 \renewcommand{\maketitle}{
@@ -29,10 +38,11 @@ snippet note "Create a new tex file using template" b
 \begin{document}
 
 \date{\today}
-\title{Lecture 1 -- Laplace Transforms}
+\title{`!p snip.rv = map_basename_to_title(snip.basename)`}
 \author{Josh Cherubino}
 \maketitle
 
+$0
 \end{document}
 endsnippet
 
