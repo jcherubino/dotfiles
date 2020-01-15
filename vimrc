@@ -12,6 +12,9 @@ filetype plugin indent on
 
 let mapleader =";"
 
+"Set global os in g:os variable
+let g:os = substitute(system('uname'), '\n', '', '')
+
 "Call the vimrc plug file to install all used plugins
  if filereadable(expand("~/.vim/plugins.vim"))
      source ~/.vim/plugins.vim
