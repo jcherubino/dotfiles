@@ -25,6 +25,9 @@ colorscheme gruvbox
 "Set dark mode
 set bg=dark
 
+"Extra Plugin confs
+let g:tex_fast= "cmMprsSvV"
+
 "Splits open at bottom and right 
 set splitbelow 
 set splitright
