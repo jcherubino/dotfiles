@@ -7,33 +7,9 @@ def wrap_in_char(match, text):
 		return match + text + closing_brackets[match]
 	else:
 		return match + text + match
-
-def check_visual_text():
-	'''Function checks visual text buffer and returns True if it is empty and
-	false otherwise to use as a context function for paren/bracket/brace
-	matching'''
-	return snip.visual_text()
 endglobal	
 
 snippet "wi(.+)" "Wrap in matching character(s). Smartly wraps in brackets" rw
 `!p snip.rv = wrap_in_char(match.group(1), snip.v.text.rstrip())` $0
-endsnippetsnippet ( "Matching Paren" i
-($1)$0
-endsnippet
-
-snippet ( "Matching Paren" i
-($1)$0
-endsnippet
-
-snippet [ "Matching Bracket" i
-[$1]$0
-endsnippet
-
-snippet trythis "test" 
-`!p snip.rv = snip.last_placeholder` $0
-endsnippet
-
-snippet { "Matching Brace" i
-{$1}$0
 endsnippet
 
