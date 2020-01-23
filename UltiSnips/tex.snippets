@@ -17,6 +17,17 @@ snippet note "Create a new tex file using template" b
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 
+%set up importing inkscape figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
 \newcommand{\unitcode}{$1}
 
 %custom title style
@@ -44,6 +55,15 @@ snippet note "Create a new tex file using template" b
 
 $0
 \end{document}
+endsnippet
+
+snippet incfig "Inlcude inkscape figure" bw
+\begin{figure}[ht]
+	\centering
+	\incfig{$1}
+	\caption{$2}
+	\label{fig:$1}
+\end{figure}
 endsnippet
 
 snippet sec "Latex Section" bA
