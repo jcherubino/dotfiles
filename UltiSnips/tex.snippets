@@ -67,6 +67,13 @@ snippet dm "Displaymath" w
 \] $0
 endsnippet
 
+snippet fig "Insert fig" bw
+\begin{figure}
+$1
+\caption{$2}
+\end{figure}$0
+endsnippet
+
 snippet eq "Insert Equation" bw
 \begin{equation} \label{eq:$1}
 	$2
@@ -76,6 +83,10 @@ endsnippet
 
 snippet eqname "Add name to equation" w
 \tag{$1} $0
+endsnippet
+
+snippet ref "Reference" w 
+\ref{$1} $0
 endsnippet
 
 snippet wim "Wrap in inline math" w

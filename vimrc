@@ -58,6 +58,9 @@ set expandtab
 "automatic indenting for any filetype
 set autoindent
 
+"Fix backspacing
+set backspace=indent,eol,start
+
 " Display options
 set showmode
 set showcmd
