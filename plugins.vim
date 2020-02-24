@@ -32,5 +32,8 @@ else
     echo "Unknown OS"
 endif
 
+"Tmux config
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
