@@ -170,3 +170,7 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 "Display line and column numbers
 set statusline+=\ %l:%c
 set statusline+=\ 
+
+"Chords setup
+call arpeggio#load()
+"Chords mappings

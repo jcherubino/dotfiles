@@ -35,5 +35,8 @@ endif
 "Tmux config
 Plug 'christoomey/vim-tmux-navigator'
 
+"vim chords
+Plug 'kana/vim-arpeggio'
+
 call plug#end()
 
