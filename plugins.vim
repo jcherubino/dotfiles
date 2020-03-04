@@ -9,10 +9,6 @@ call plug#begin('~/.vim/plugged')
 "Colorscheme"
 Plug 'morhetz/gruvbox'
 
-"Javascript and JSX syntax highlighting for react
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-
 "Ultisnips snippet manager
 Plug 'SirVer/ultisnips'
 
