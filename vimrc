@@ -11,6 +11,7 @@ syntax on
 filetype plugin indent on
 
 let mapleader =";"
+let maplocalleader = "\<Space>"
 
 "Set global OS in g:os variable
 let g:os = substitute(system('uname'), '\n', '', '')
@@ -40,6 +41,7 @@ map <C-l> <C-w>l
 
 "Set maximum column length to 80 characters
 set textwidth=80
+set wrap
 
 "Turn on spell checking
 setlocal spell spelllang=en_au
@@ -174,6 +176,8 @@ set statusline+=\
 "Chords setup
 call arpeggio#load()
 "Chords mappings
+"map jk to exit insert mode
+Arpeggio inoremap jk <Esc>
 
 "General mappings
 "Capitalise current word
@@ -183,3 +187,20 @@ nnoremap <leader>u viwU
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 
+"Abbreivations
+"email
+iabbrev @@ josh.cherubino@gmail.com
+
+"Autocommands
+
+"Python autocommands
+augroup filetype_python
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+augroup END
+
+"Tex autocommands
+augroup filetype_tex
+    autocmd!
+    "Save file if modified in normal mode or Insert
+    autocmd TextChanged,InsertLeave *.tex :write 
