@@ -176,5 +176,10 @@ call arpeggio#load()
 "Chords mappings
 
 "General mappings
+"Capitalise current word
 inoremap <leader>u <esc> viwUi
 nnoremap <leader>u viwU
+"Edit vimrc
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
+nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+
