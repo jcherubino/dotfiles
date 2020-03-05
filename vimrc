@@ -176,5 +176,5 @@ call arpeggio#load()
 "Chords mappings
 
 "General mappings
-inoremap <c-u> <esc> viwUi
-nnoremap <c-u> viwU
+inoremap <leader>u <esc> viwUi
+nnoremap <leader>u viwU
