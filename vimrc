@@ -11,7 +11,7 @@ syntax on
 filetype plugin indent on
 
 let mapleader =";"
-let maplocalleader = "\<Space>"
+let maplocalleader = "\\"
 
 "Set global OS in g:os variable
 let g:os = substitute(system('uname'), '\n', '', '')
@@ -202,5 +202,8 @@ augroup END
 "Tex autocommands
 augroup filetype_tex
     autocmd!
+    "Save on open
+    autocmd BufNewFile *.tex :write
     "Save file if modified in normal mode or Insert
     autocmd TextChanged,InsertLeave *.tex :write 
+augroup END
