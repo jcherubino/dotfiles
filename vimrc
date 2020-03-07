@@ -177,6 +177,10 @@ call arpeggio#load()
 "Chords mappings
 "map jk to exit insert mode
 Arpeggio inoremap jk <Esc>
+"ys in normal mode to yank line to  system keyboard
+Arpeggio nnoremap ys "+y
+"ps in normal mode to paste from system keyboard
+Arpeggio nnoremap ps "+p
 
 "General mappings
 "Capitalise current word
