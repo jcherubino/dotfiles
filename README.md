@@ -19,6 +19,8 @@ set vi-cmd-mode-string \1\033[1;31m\2(c)\1\033[m\2
 $endif
 
 ```
+- On Linux systems, run `sudo apt-get install vim-gtk` to allow vim to access
+system clipboard
 - Finally open vim and in normal mode run the command `:PlugInstall` to install all listed plugins
 # setup (tmux)
 - Install `tmux` and run the command `./.vim/tmux/link_conf_file.sh` to use the tmux conf file listed in the .vim directory

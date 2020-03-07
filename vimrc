@@ -41,7 +41,6 @@ map <C-l> <C-w>l
 
 "Set maximum column length to 80 characters
 set textwidth=80
-set wrap
 
 "Turn on spell checking
 setlocal spell spelllang=en_au
