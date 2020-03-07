@@ -200,7 +200,7 @@ iabbrev @@ josh.cherubino@gmail.com
 augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-augroup END
+augroup end
 
 "Tex autocommands
 augroup filetype_tex
@@ -209,11 +209,14 @@ augroup filetype_tex
     autocmd BufNewFile *.tex :write
     "Save file if modified in normal mode or Insert
     autocmd TextChanged,InsertLeave *.tex :write 
-augroup END
+augroup end
 
 "auto save and autoload folds
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+  " view files are about 500 bytes
+  " bufleave but not bufwinleave captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
