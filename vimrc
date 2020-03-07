@@ -210,3 +210,10 @@ augroup filetype_tex
     "Save file if modified in normal mode or Insert
     autocmd TextChanged,InsertLeave *.tex :write 
 augroup END
+
+"auto save and autoload folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
