@@ -1,28 +1,76 @@
 #!/usr/bin/env bash
 #Script to symlink config files safely
 
-link () {
-    #Check in path exists & exit with message if it does not
-    if [ ! -f $1 ] || [ ! -d $1]; then
-        echo "$1 does not exist, please create it." >&2
-        return 1
+#function to check if a file or directory exists or not
+#returns 0 if it does and 1 if not
+exists () {
+    #check if first arg is -d
+    if [ "$1" == "-d"] || [ "$1" == "--directory" ]; then
+        flag="-d"
+    else
+        flag="-f"
     fi
 
-    #Check if outpath  exists as regular file or directory & exit if it does
-    if [ -f $2 ] || [ -d $2 ]; then
-        echo "$2 already exists." >&2
+    #Check in path exists  
+    if [ "$flag $1"]; then
+        return 0
+    else
         return 1
     fi
+}
 
-    #symlink in path and out path
+usage () {
+    echo "usage: link [-d || --directory] source dest"
+}
+
+symlink () {
     ln -s $1 $2
+}
 
+main () {
+    exists_flag=""
+    #parse over all args containing -
+    while [[ "$1" == *"-"* ]]; do
+        case $1 in
+            -d | --directory ) shift
+                               exists_flag="-d"
+                               ;;
+            -h | --help ) shift
+                          usage
+                          exit
+                          ;;
+           * )            usage
+                          exit 1
+         esac
+         shift
+     done
+    
+    # set source and destination
+    src=$1
+    dest=$2
+
+    #check source exists
+    if [ "$(exists $exists_flag $src)" == 1]; then
+        echo "$src does not exist, please create it." >&2
+        return 1
+    fi
+
+    #check dest doesn't exist
+    if [ "$(exists $exists_flag $dest)" == 0]; then
+        echo "$dest already exists." >&2
+        return 1
+    fi
+
+    symlink $src $dest
     #Check if symlink ran successfully
     if [ $? -eq 0 ]; then
-        echo "$2 symlinked with $1"
+        echo "$src symlinked with $dest"
         return 0
     else
         echo "Symlink not created" >&2
         return 1
     fi
 }
+
+exit "$(main $@)"
+

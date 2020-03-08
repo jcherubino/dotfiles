@@ -1,2 +1,5 @@
 plugged/
 .netrwhist
+
+*.swo
+*.swp
