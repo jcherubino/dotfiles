@@ -16,21 +16,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader>z"
 let g:UltiSnipsJumpBackwardTrigger="<leader>b"
 
-"LaTeX plugins for using vim
-Plug 'lervag/vimtex', { 'for': 'tex'}
-
-if &filetype == 'tex'
-    let g:tex_flavor='latex'
-    if g:os == "Darwin"
-        let g:vimtex_compiler_program = 'nvr'
-        let g:vimtex_view_method ='skim'
-    elseif g:os == "Linux"
-        let g:vimtex_view_method = 'zathura'
-    else
-        echo "Unknown OS"
-    endif
-endif
-
 "Tmux config
 Plug 'christoomey/vim-tmux-navigator'
 

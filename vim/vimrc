@@ -26,8 +26,6 @@ colorscheme gruvbox
 "Set dark mode
 set bg=dark
 
-"Extra Plugin confs
-let g:tex_fast= "cmMprsSvV"
 
 "Splits open at bottom and right 
 set splitbelow 
@@ -76,6 +74,8 @@ set relativenumber
 " Encoding
 set encoding=utf-8
 
+"Folding
+set foldmethod=manual
 "SEARCHING
 "Highlight search matches
 set hlsearch
@@ -201,15 +201,6 @@ iabbrev @@ josh.cherubino@gmail.com
 augroup filetype_python
     autocmd!
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
-augroup end
-
-"Tex autocommands
-augroup filetype_tex
-    autocmd!
-    "Save on open
-    autocmd BufNewFile *.tex :write
-    "Save file if modified in normal mode or Insert
-    autocmd TextChanged,InsertLeave *.tex :write 
 augroup end
 
 "auto save and autoload folds
