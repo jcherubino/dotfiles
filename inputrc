@@ -7,4 +7,4 @@ set show-mode-in-prompt on
 set vi-ins-mode-string \1\033[1;32m\2(i)\1\033[m\2
 set vi-cmd-mode-string \1\033[1;31m\2(c)\1\033[m\2
 
-$endifp
+$endif
