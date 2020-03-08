@@ -76,6 +76,7 @@ set encoding=utf-8
 
 "Folding
 set foldmethod=manual
+
 "SEARCHING
 "Highlight search matches
 set hlsearch

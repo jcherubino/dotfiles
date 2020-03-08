@@ -1,6 +1,5 @@
 setlocal textwidth=0
 
-
 "Function to compile markdown to pdf using pandoc and then redraw vim to fix black screen
 "Caused by silent
 function UpdateAndRedraw() 
