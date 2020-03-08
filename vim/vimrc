@@ -177,8 +177,6 @@ call arpeggio#load()
 "Chords mappings
 "map jk to exit insert mode
 Arpeggio inoremap jk <Esc>
-"ys in normal mode to yank line to  system keyboard
-Arpeggio nnoremap ys "+y
 "ps in normal mode to paste from system keyboard
 Arpeggio nnoremap ps "+p
 
@@ -189,6 +187,9 @@ nnoremap <leader>u viwU
 "Edit vimrc
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
 nnoremap <leader>sv :source ~/.vim/vimrc<cr>
+
+"yank to system clipboard
+nnoremap <leader>ys "+y
 
 "Abbreivations
 "email

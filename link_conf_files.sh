@@ -12,7 +12,7 @@ exists () {
     fi
 
     #Check in path exists  
-    if [ "$flag $1"]; then
+    if [[ "$flag $1"]]; then
         return 0
     else
         return 1
@@ -20,10 +20,10 @@ exists () {
 }
 
 usage () {
-    echo "usage: link [-d || --directory] source dest"
+    echo "usage: link_conf_files [-d || --directory] source dest"
 }
 
-symlink () {
+link_files () {
     ln -s $1 $2
 }
 
@@ -50,18 +50,18 @@ main () {
     dest=$2
 
     #check source exists
-    if [ "$(exists $exists_flag $src)" == 1]; then
+    if [[ "$(exists $exists_flag $src)" == 1]]; then
         echo "$src does not exist, please create it." >&2
         return 1
     fi
 
     #check dest doesn't exist
-    if [ "$(exists $exists_flag $dest)" == 0]; then
+    if [[ "$(exists $exists_flag $dest)" == 0]]; then
         echo "$dest already exists." >&2
         return 1
     fi
 
-    symlink $src $dest
+    link_files $src $dest
     #Check if symlink ran successfully
     if [ $? -eq 0 ]; then
         echo "$src symlinked with $dest"
