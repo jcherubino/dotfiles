@@ -4,15 +4,15 @@ snippet lect "Lecture header" b
 endsnippet
 
 snippet b "bold" w
-**$1** $0
+**${1:${VISUAL}}** $0
 endsnippet
 
 snippet i "italic" w
-*$1* $0
+*${1:${VISUAL}}* $0
 endsnippet
 
 snippet bi "Bold and italic" w
-***$1*** $0
+***${1:${VISUAL}}*** $0
 endsnippet
 
 snippet h1 "header 1" bA
@@ -82,9 +82,10 @@ $$1$ $0
 endsnippet
 
 snippet dm "Displaymath" w
-\[
-	$1
-\] $0
+$$
+$1
+$$
+$0
 endsnippet
 
 snippet eq "Insert Equation" bw
@@ -103,11 +104,11 @@ snippet frac "Fraction" i
 endsnippet
 
 snippet sub "Supscript" i
-_{$1} $0
+_{$1}$0
 endsnippet
 
 snippet sup "Superscript" i
-^{$1} $0
+^{$1}$0
 endsnippet
 
 snippet ... "ldots" iA
@@ -168,3 +169,6 @@ snippet << "<<" iA
 \ll
 endsnippet
 
+snippet log "insert log" w
+\log_{$1} $2 $0
+endsnippet
