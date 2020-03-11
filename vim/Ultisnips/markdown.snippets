@@ -76,6 +76,14 @@ snippet task "Task list" b
 $0
 endsnippet
 
+snippet flab "Label figure" w
+\label{$1} $0
+endsnippet
+
+snippet fref "Refrence figure" w
+\ref{fig:$1} $0
+endsnippet
+
 #LaTeX math environemnt snippets
 snippet im "Inline math" w
 $$1$ $0
@@ -138,7 +146,7 @@ snippet sqrt "Square root" iA
 endsnippet
 
 snippet int "Integral" w
-\int_${1:a}^${2:b} $3\;\mathrm{d}x $0
+\int_{${1:a}}^{${2:b}} $3\;\mathrm{d}${4:x} $0
 endsnippet
 
 snippet sum "Sum" w
