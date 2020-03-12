@@ -13,3 +13,14 @@ snippet "wi(.+)" "Wrap in matching character(s). Smartly wraps in brackets" rw
 `!p snip.rv = wrap_in_char(match.group(1), snip.v.text.rstrip())` $0
 endsnippet
 
+snippet ( "Add matching bracket"
+($1)$0
+endsnippet
+
+snippet [ "Add matching bracket"
+[$1]$0
+endsnippet
+
+snippet { "Add matching bracket"
+{$1}$0
+endsnippet
