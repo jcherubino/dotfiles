@@ -57,3 +57,9 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 #Move between spaces
 shift - right : yabai -m space --focus next
 shift - left : yabai -m space --focus prev
+
+#App open mappings
+#open terminal with normal binding
+ctrl + alt - t : open -na "iTerm"; clear
+#open chrome window using similar bind (use b for browser not c for chrome for ease of entering)
+ctrl + alt - b : open -na "Google Chrome" --args --new-window

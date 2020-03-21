@@ -3,8 +3,6 @@ A repo to store all configs to be shared across all OSX/Linux devices
 
 # TODO
 
-- Add window resizing hotkeys to ` skhdrc`
-- Add iTerm and Chrome launch hotkeys to ` skhdrc ` 
 - Add bashrc to this repo and set up, including handling ROS stuff for ubuntu only
 
 # setup (vim)
