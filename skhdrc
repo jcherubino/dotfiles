@@ -1,6 +1,4 @@
-# blacklist apps
-#.blacklist [
-#]
+# SETUP FILE FOR SKHD (hotkey daemon for OSX)
 
 # change focus window using vim-like binds
 #cmd key added to allow use of tmux and vim splits without interference
@@ -32,8 +30,22 @@ shift + alt - e : yabai -m window --toggle split
 
 # MODIFY WINDOW SIZE
 
-# ctrl + alt - a : yabai -m window --resize left:-20:0
-# shift + alt - w : yabai -m window --resize top:0:-20
+#modify left and right from either side
+#modify from right side, use ctrl
+ctrl + alt - h : yabai -m window --resize left:-20:0
+ctrl + alt - l : yabai -m window --resize left:20:0
+#modify from left side, use fn
+fn + alt - h : yabai -m window --resize right:-20:0
+fn + alt - l : yabai -m window --resize right:20:0
+
+#modify up and down from either side
+#modify from bottom, use ctrl
+ctrl + alt - k : yabai -m window --resize top:0:-20
+ctrl + alt - j : yabai -m window --resize top:0:20
+
+#modify from top, use fn
+fn + alt - k : yabai -m window --resize bottom:0:-20
+fn + alt - j : yabai -m window --resize bottom:0:20
 
 # decrease window size
 # shift + cmd - s : yabai -m window --resize bottom:0:-20
