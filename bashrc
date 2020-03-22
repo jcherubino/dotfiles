@@ -38,12 +38,15 @@ if [ "$(uname -s)" == "Darwin" ]; then
     alias 2131="cd ~/Documents/ECE2131"
     alias 2402="cd ~/Documents/MEC2402"
 
-    #aliases to edit ROS commands
+    #aliases to edit rover repos
     alias rover="cd ~/Documents/novarover/rover"
     alias base="cd ~/Documents/novarover/base"
     alias common="cd ~/Documents/novarover/common"
     alias science="cd ~/Documents/novarover/science"
     alias pics="cd ~/Documents/novarover/pics"
+
+    #to make launching skim at a certain pdf easier, use by skim <filename>
+    alias skim="open -a 'skim'"
 
     #For use in MPLAB/PIC programming
     export PATH="$PATH:"/Applications/microchip/xc16/v1.41/bin""
