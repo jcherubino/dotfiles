@@ -3,8 +3,6 @@ A repo to store all configs to be shared across all OSX/Linux devices
 
 # TODO
 
-- Add bashrc to this repo and set up, including handling ROS stuff for ubuntu only
-
 # setup
 - from the home directory run the command `git clone https://github.com/jcherubino/dotfiles .dotfiles` to clone the repo under the name `.dotfiles`.
 
