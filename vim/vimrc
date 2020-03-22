@@ -155,13 +155,13 @@ set statusline=
 set statusline+=%#PmenuSel#
 "Display status line in format reponame : branchname : ! if changes need
 "committing
-set statusline+=%{StatuslineGit()}
+"set statusline+=%{StatuslineGit()}
 "Show [+] in red text if changes to file have been made
 set statusline+=%#WarningMsg#
 set statusline+=%m
 "Display path to file
 set statusline+=%#Tooltip#
-set statusline+=\ %{SetFilePathDisplay()}
+set statusline+=%f
 "Right align text
 set statusline+=%=
 set statusline+=%#CursorColumn#
