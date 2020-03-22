@@ -132,7 +132,7 @@ function! StatuslineGit()
       if l:status == '!'
           return join([l:branchname, l:status], ' : ') . ' '
       else
-          return  l:branchname . ' '
+          return  ' ' . l:branchname . ' '
       endif
   else
       return ''
