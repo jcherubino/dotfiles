@@ -1,4 +1,4 @@
-function CompileAndRedraw()
+function! CompileAndRedraw()
     :write
     :silent execute "! gcc -o " . expand("%:r") . " " . expand("%r")
     :redraw!
