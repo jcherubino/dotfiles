@@ -9,5 +9,5 @@ function UpdateAndRedraw()
 endfunction
 
 nnoremap <localleader>c :call UpdateAndRedraw()<CR>
-
+nnoremap <localleader>s : execute "! open -a 'skim' PDFs/" . expand("%:r") . ".pdf"<CR>
 
