@@ -84,6 +84,22 @@ snippet fref "Refrence figure" w
 \ref{fig:$1} $0
 endsnippet
 
+snippet c "Create a table cell" w
+| $1 | $0
+endsnippet
+
+snippet nc "Create next table cell (don't need first |)" w
+$1 | $0
+endsnippet
+
+snippet lc "Create line cell" w
+| -- | $0
+endsnippet
+
+snippet nlc "Create next line cell" w
+-- | $0
+endsnippet
+
 #LaTeX math environemnt snippets
 snippet im "Inline math" i
 $$1$ $0
