@@ -26,6 +26,9 @@ colorscheme gruvbox
 "Set dark mode
 set bg=dark
 
+if !(empty(expand("~/.bash_aliases")))
+    let $BASH_ENV = "~/.bash_aliases"
+endif
 
 "Splits open at bottom and right 
 set splitbelow 
