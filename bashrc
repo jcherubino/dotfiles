@@ -48,6 +48,10 @@ if [ "$(uname -s)" == "Darwin" ]; then
     #to make launching skim at a certain pdf easier, use by skim <filename>
     alias skim="open -a 'skim'"
 
+    #set alias for g++ and gcc compilers to use brew versions
+    alias gcc="gcc-9"
+    alias g++="g++-9"
+
     #For use in MPLAB/PIC programming
     export PATH="$PATH:"/Applications/microchip/xc16/v1.41/bin""
 
