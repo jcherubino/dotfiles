@@ -1,6 +1,3 @@
-#Enable alias expansion of this file -- allows vim to use aliases
-shopt -s expand_aliases  
-
 #VirtualBox stuff
 alias startvm="VBoxManage startvm 'ubuntu' --type headless"
 alias stopvm="VBoxManage controlvm 'ubuntu' poweroff --type headless"

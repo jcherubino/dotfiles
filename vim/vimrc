@@ -26,10 +26,6 @@ colorscheme gruvbox
 "Set dark mode
 set bg=dark
 
-if !(empty(expand("~/.bash_aliases")))
-    let $BASH_ENV = "~/.bash_aliases"
-endif
-
 "Splits open at bottom and right 
 set splitbelow 
 set splitright
@@ -207,6 +203,23 @@ augroup filetype_python
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
 augroup end
 
+"Makefile autocommands
+augroup filetype_make
+    autocmd!
+    "Use actual tab characters in makefiles
+    autocmd Filetype make set noexpandtab
+augroup end
+
+"Joint cpp and c autocommands
+augroup filetype_compiled
+    autocmd!
+    "compile files with a makefile 
+    autocmd Filetype cpp nnoremap <localleader>c :silent make<CR>:redraw!<CR>
+    autocmd QuickFixCmdPost * :copen
+    "Clean files
+    autocmd Filetype cpp nnoremap <localleader>e :silent make clean<CR>:redraw!<CR>
+augroup end
+
 "auto save and autoload folds
 augroup AutoSaveFolds
   autocmd!
@@ -216,3 +229,4 @@ augroup AutoSaveFolds
   autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
   autocmd BufWinEnter ?* silent! loadview
 augroup end
+
