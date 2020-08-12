@@ -107,36 +107,36 @@ endfunction
 
 "Due to slow performance function is not being used - needs to smartly store
 "name 
-function! GitRepoName()
-    let l:name = system("basename -s .git `git config --get remote.origin.url`")
-    " use indexes to strip ^@ characters from end of repo name
-    return l:name[:-2] 
-endfunction
-
-function! HasUncommitedChanges()
-    let l:status = system("git status --porcelain --untracked-files=no")
-    if len(l:status) > 0
-        return '!'
-    else
-        return ''
-    endif
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  "If branch name is not empty then in a git repo
-  if strlen(l:branchname)>0
-      "let l:repo = GitRepoName()
-      let l:status = HasUncommitedChanges()
-      if l:status == '!'
-          return join([l:branchname, l:status], ' : ') . ' '
-      else
-          return  ' ' . l:branchname . ' '
-      endif
-  else
-      return ''
-  endif
-endfunction
+"function! GitRepoName()
+"    let l:name = system("basename -s .git `git config --get remote.origin.url`")
+"    " use indexes to strip ^@ characters from end of repo name
+"    return l:name[:-2] 
+"endfunction
+"
+"function! HasUncommitedChanges()
+"    let l:status = system("git status --porcelain --untracked-files=no")
+"    if len(l:status) > 0
+"        return '!'
+"    else
+"        return ''
+"    endif
+"endfunction
+"
+"function! StatuslineGit()
+"  let l:branchname = GitBranch()
+"  "If branch name is not empty then in a git repo
+"  if strlen(l:branchname)>0
+"      "let l:repo = GitRepoName()
+"      let l:status = HasUncommitedChanges()
+"      if l:status == '!'
+"          return join([l:branchname, l:status], ' : ') . ' '
+"      else
+"          return  ' ' . l:branchname . ' '
+"      endif
+"  else
+"      return ''
+"  endif
+"endfunction
 
 "If the relative path to the file name exceeds 20 characters, then function will just
 "return a string of the function name for use in the statusline
