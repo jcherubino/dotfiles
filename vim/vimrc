@@ -214,10 +214,10 @@ augroup end
 augroup filetype_compiled
     autocmd!
     "compile files with a makefile 
-    autocmd Filetype cpp nnoremap <localleader>c :silent make<CR>:redraw!<CR>
+    autocmd Filetype cpp,c nnoremap <localleader>c :write<CR>:silent make<CR>:redraw!<CR>
     autocmd QuickFixCmdPost * :copen
     "Clean files
-    autocmd Filetype cpp nnoremap <localleader>e :silent make clean<CR>:redraw!<CR>
+    autocmd Filetype cpp,c nnoremap <localleader>e :silent make clean<CR>:redraw!<CR>
 augroup end
 
 "auto save and autoload folds

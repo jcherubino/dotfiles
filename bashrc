@@ -22,6 +22,7 @@ export EDITOR=vim
 if [ "$(uname -s)" == "Darwin" ]; then
     #For use in MPLAB/PIC programming
     export PATH="$PATH:"/Applications/microchip/xc16/v1.41/bin""
+    export PATH="$PATH:"$HOME/bin""
 
 #Linux specific setup
 elif [ "$(uname -s)" == "Linux" ]; then

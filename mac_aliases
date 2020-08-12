@@ -4,16 +4,7 @@ alias stopvm="VBoxManage controlvm 'ubuntu' poweroff --type headless"
 alias sshvm="ssh jcherubino@127.0.0.1 -p 2222"
 
 #Aliases for current unit folders and note folders
-alias notes="cd ~/Documents/notes"
-alias n2071="cd ~/Documents/notes/ECE2071"
-alias n3141="cd ~/Documents/notes/ECE3141"
-alias n2131="cd ~/Documents/notes/ECE2131"
-alias n2402="cd ~/Documents/notes/MEC2402"
-
-alias 2071="cd ~/Documents/ECE2071"
-alias 3141="cd ~/Documents/ECE3141"
-alias 2131="cd ~/Documents/ECE2131"
-alias 2402="cd ~/Documents/MEC2402"
+alias 2201="cd ~/Documents/TRC2201"
 
 #aliases to edit rover repos
 alias rover="cd ~/Documents/novarover/rover"
