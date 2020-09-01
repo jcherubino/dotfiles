@@ -6,8 +6,6 @@ A repo to store all configs to be shared across all OSX/Linux devices
 # setup
 - from the home directory run the command `git clone https://github.com/jcherubino/dotfiles .dotfiles` to clone the repo under the name `.dotfiles`.
 
-- On Linux systems, run `sudo apt-get install vim-gtk` to allow vim to access
-system clipboard
 - SymLink all relevant files into the home directory under their appropriate names
 - Note that with nvim must symlink to ~/.config/nvim 
 - Finally open nvim and in normal mode run the command `:PlugInstall` to install all listed plugins
