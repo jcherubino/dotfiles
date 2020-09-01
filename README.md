@@ -8,8 +8,8 @@ A repo to store all configs to be shared across all OSX/Linux devices
 
 - On Linux systems, run `sudo apt-get install vim-gtk` to allow vim to access
 system clipboard
--SymLink all relevant files into the home directory under their appropriate names
--Note that with nvim must symlink to ~/.config/nvim 
+- SymLink all relevant files into the home directory under their appropriate names
+- Note that with nvim must symlink to ~/.config/nvim 
 - Finally open nvim and in normal mode run the command `:PlugInstall` to install all listed plugins
 
 # setup (tmux)
