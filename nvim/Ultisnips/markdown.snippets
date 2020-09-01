@@ -1,0 +1,214 @@
+#Markdown specific shortcuts
+snippet lect "Lecture header" b
+# ${1:Lecture title} -- *${2:Unit code} : `date +%d/%m/%y`*
+endsnippet
+
+snippet b "bold" w
+**${1:${VISUAL}}** $0
+endsnippet
+
+snippet i "italic" w
+*${1:${VISUAL}}* $0
+endsnippet
+
+snippet bi "Bold and italic" w
+***${1:${VISUAL}}*** $0
+endsnippet
+
+snippet h1 "header 1" bA
+# $0
+endsnippet
+
+snippet h2 "header 2" bA
+## $0
+endsnippet
+
+snippet h3 "header 3" bA
+### $0
+endsnippet
+
+snippet h4 "Header 4" bA
+#### $0
+endsnippet
+
+snippet hbar "Horizontal bar" bA
+---
+endsnippet
+
+snippet inc "Inline Code" w
+\` $1 \` $0
+endsnippet
+
+snippet cbl "Code block" bA
+\`\`\`
+$1
+\`\`\`
+$0
+endsnippet
+
+snippet link "Hyperlink" w
+[$1]($2) $0
+endsnippet
+
+snippet fig "Insert figure" b
+![$1]($2)
+$0
+endsnippet
+
+snippet fnote "foot note" w
+[^$1] $0
+
+[^$1]: $2
+endsnippet
+
+snippet def "Definition" b
+$1
+: $2
+$0
+endsnippet
+
+snippet strike "Strikethrough"
+	~~${VISUAL}~~
+endsnippet
+
+snippet task "Task list" b
+- [${1: }] $2
+$0
+endsnippet
+
+snippet lab "Label figure" w
+\label{$1} $0
+endsnippet
+
+snippet fref "Refrence figure" w
+\ref{fig:$1} $0
+endsnippet
+
+snippet c "Create a table cell" w
+| $1 | $0
+endsnippet
+
+snippet nc "Create next table cell (don't need first |)" w
+$1 | $0
+endsnippet
+
+snippet lc "Create line cell" w
+| -- | $0
+endsnippet
+
+snippet nlc "Create next line cell" w
+-- | $0
+endsnippet
+
+#LaTeX math environemnt snippets
+snippet im "Inline math" i
+$$1$ $0
+endsnippet
+
+snippet dm "Displaymath" w
+$$
+$1
+$$
+$0
+endsnippet
+
+snippet eq "Insert Equation" bw
+\begin{equation} \label{eq:$1}
+	$2
+\end{equation}
+$0
+endsnippet
+
+snippet wim "Wrap in inline math" w
+$ ${VISUAL:} $ $0
+endsnippet
+
+snippet frac "Fraction" i
+\\frac{$1}{$2} $0
+endsnippet
+
+snippet sub "Supscript" i
+_{$1}$0
+endsnippet
+
+snippet sup "Superscript" i
+^{$1}$0
+endsnippet
+
+snippet ... "ldots" i
+\ldots
+endsnippet
+
+snippet pmat "Paren matrix" iA
+\begin{pmatrix}
+	$1
+\end{pmatrix}
+$0
+endsnippet
+
+snippet bmat "Brackets matrix" iA
+\begin{bmatrix}
+	$1
+\end{bmatrix}
+$0
+endsnippet
+
+snippet lim "limit" w
+\lim_{${1:n} \to ${2:\infty}}
+endsnippet
+
+snippet sqrt "Square root" iA
+\sqrt{$1} $0
+endsnippet
+
+snippet int "Integral" w
+\int_{${1:a}}^{${2:b}} $3\;\mathrm{d}${4:x} $0
+endsnippet
+
+snippet sum "Sum" w
+\sum_{${1:n=1}}^{${2:\infty}} $0
+endsnippet
+
+snippet nroot "nth power root" iA
+\sqrt[$1]{$2} $0
+endsnippet
+
+snippet ooo "\infty" iA
+\infty
+endsnippet
+
+snippet <= "leq" i
+\le
+endsnippet
+
+snippet >= "geq" i
+\ge
+endsnippet
+
+snippet >> ">>" iA
+\gg
+endsnippet
+
+snippet << "<<" iA
+\ll
+endsnippet
+
+snippet log "insert log" w
+\log_{$1} $2 $0
+endsnippet
+
+snippet theta "theta" w
+\theta$0
+endsnippet
+
+snippet omega "omega" w
+\omega$0
+endsnippet
+
+snippet vec "Vector" w
+\vec{$1}$0
+endsnippet
+
+snippet bm "Bold math" i
+\mathbf{$1}$0
+endsnippet
