@@ -36,8 +36,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-"Set maximum column length to 80 characters
-set textwidth=80
+"Set maximum column length to unlimited characters
+set textwidth=0
+"Set column to mark max ideal linewidth of 80
+set colorcolumn=80
 
 "Turn on spell checking
 setlocal spell spelllang=en_au
