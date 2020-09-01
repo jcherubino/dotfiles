@@ -47,6 +47,7 @@ setlocal spell spelllang=en_au
 hi SpellBad ctermfg=001 cterm=bold,underline
 
 "Fix delay in pressing <Esc> to exit
+set ttimeout
 set timeoutlen=1000 ttimeoutlen=0
 
 
