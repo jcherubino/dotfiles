@@ -22,6 +22,9 @@ syntax on
 "Make backspaces normal
 set backspace=indent,eol,start
 
+"Set tabs to 'python' style by default
+setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent smartindent
+
 "Allow leaving buffer without saving
 set hidden
 set noswapfile
