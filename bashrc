@@ -16,11 +16,11 @@ PS1+="\n"
 PS1+="\[${white}\]\$ \[${reset}\]";
 export PS1
 
-export EDITOR=nvim
+export EDITOR=vim
 
 #Genereric aliases
-alias vim="nvim"
-alias v="nvim"
+#alias vim="nvim"
+#alias v="nvim"
 
 #OSX specific setup
 if [ "$(uname -s)" == "Darwin" ]; then

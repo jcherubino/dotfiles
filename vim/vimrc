@@ -1,0 +1,65 @@
+"Compatability to ViM (not Vi)
+set nocompatible
+
+"Disable automatic nextline commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+"For easy editing of config
+let $RTP = split(&runtimepath, ',')[0]
+let $RC = "$HOME/.vim/vimrc"
+
+"leaders
+let mapleader = ";"
+"must escape backslash
+let maplocalleader = "\\"
+
+"Enable filetype detection, plugins and indents
+filetype plugin indent on
+
+"Enable syntax highlighting
+syntax on
+
+"Make backspaces normal
+set backspace=indent,eol,start
+
+"Allow leaving buffer without saving
+set hidden
+set noswapfile
+set showcmd
+
+"Set path to current directory and all subdirectories recursively
+"Makes find command effective
+set path=.,**
+
+"Search configuration
+set ignorecase smartcase incsearch hlsearch
+
+"show line numbers - relative for all lines except current line
+set number
+set relativenumber 
+
+set encoding=utf-8
+
+"STATUS BAR
+"Always display statusbar
+set laststatus=2
+
+"SPLITS
+"Splits open at bottom and right 
+set splitbelow 
+set splitright
+"shortcut split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"terminal mode same mappings
+tnoremap <C-h> <C-w>h
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-l> <C-w>l
+
+"Toggle syntax highlighting of current search off
+nnoremap <CR> :nohlsearch<CR><CR>
+
