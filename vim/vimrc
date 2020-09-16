@@ -19,6 +19,9 @@ filetype plugin indent on
 "Enable syntax highlighting
 syntax on
 
+set timeoutlen=1000 "Delay in ms to time out on a mapping
+set ttimeoutlen=50 "Delay in ms to time out on individual keypress
+
 "Make backspaces normal
 set backspace=indent,eol,start
 
