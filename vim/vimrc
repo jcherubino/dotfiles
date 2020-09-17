@@ -81,6 +81,16 @@ tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
 
+"AUTOCOMMANDS
+
+"for ROS launch files
+augroup launch_files
+	autocmd!
+	"Whenever entering .launch files (for ROS) set ft to xml
+	autocmd BufEnter *.launch set filetype=xml
+augroup END
+
+"MAPPINGS
 "Toggle syntax highlighting of current search off
 nnoremap <CR> :nohlsearch<CR><CR>
 
