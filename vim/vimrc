@@ -32,6 +32,7 @@ call plug#end()
 
 "Enable syntax highlighting
 syntax on
+set background=dark "Use default style with dark background
 
 set timeoutlen=1000 "Delay in ms to time out on a mapping
 set ttimeoutlen=50 "Delay in ms to time out on individual keypress
@@ -80,6 +81,16 @@ tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
 
+"AUTOCOMMANDS
+
+"for ROS launch files
+augroup launch_files
+	autocmd!
+	"Whenever entering .launch files (for ROS) set ft to xml
+	autocmd BufEnter *.launch set filetype=xml
+augroup END
+
+"MAPPINGS
 "Toggle syntax highlighting of current search off
 nnoremap <CR> :nohlsearch<CR><CR>
 
