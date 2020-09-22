@@ -2,7 +2,7 @@
 set nocompatible
 
 "Disable automatic nextline commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "For easy editing of config
 let $RTP = split(&runtimepath, ',')[0]
