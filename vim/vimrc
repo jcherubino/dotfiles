@@ -1,8 +1,6 @@
 "Compatability to ViM (not Vi)
 set nocompatible
 
-"Disable automatic nextline commenting
-au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "For easy editing of config
 let $RTP = split(&runtimepath, ',')[0]
@@ -15,6 +13,10 @@ let maplocalleader = "\\"
 
 "Enable filetype detection, plugins and indents
 filetype plugin indent on
+
+"Disable automatic nextline commenting - must be after filetype plugin indent
+"on line
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Plugin setup
 if empty(glob('~/.vim/autoload/plug.vim'))
