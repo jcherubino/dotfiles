@@ -39,7 +39,13 @@ set background=dark "Use default style with dark background
 set timeoutlen=1000 "Delay in ms to time out on a mapping
 set ttimeoutlen=50 "Delay in ms to time out on individual keypress
 
-"Make backspaces normal
+"Set up netrw 
+let g:netrw_banner = 0 "No banner
+let g:netrw_liststyle = 3 "Tree style listing
+let g:netrw_browse_split = 0 "Open splits in same window
+let g:netrw_altv = 1 "Open splits on left
+
+    "Make backspaces normal
 set backspace=indent,eol,start
 
 "Set tabs to 'python' style by default
