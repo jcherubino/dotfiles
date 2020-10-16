@@ -1,6 +1,8 @@
 #VirtualBox stuff
 alias startvm="VBoxManage startvm 'novarover' --type headless"
 alias stopvm="VBoxManage controlvm 'novarover' poweroff --type headless"
+alias pausevm="VBoxManage controlvm novarover pause"
+alias resumevm="VBoxManage controlvm novarover resume"
 alias sshvm="ssh jcherubino@127.0.0.1 -p 2222"
 
 #Aliases for current unit folders and note folders
